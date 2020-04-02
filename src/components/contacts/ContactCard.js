@@ -5,21 +5,21 @@ import PhoneCallbackIcon from '@material-ui/icons/PhoneCallback';
 
 const ContactCard = ({user: { name, email, untouched }}) => {
   return (
-    <div class="ui cards contact-card">
-      <div class="card">
-        <div class="content">
+    <div className="ui cards contact-card">
+      <div className="card">
+        <div className="content">
           <div className="contact-card__icons">
-            <div class="right floated mini ui image">
+            <div className="right floated mini ui image">
               <MailOutlineIcon/>
             </div>
-            <div class="right floated mini ui image">
+            <div className="right floated mini ui image">
               <PhoneCallbackIcon/>
             </div>
           </div>
-          <div class="header"> 
+          <div className="header"> 
             { name } {untouched ? <span className="ui label contact-card__untouched">New</span> : null}
           </div>
-          <div class="meta">{email}</div>
+          <div className="meta">{email}</div>
         </div>
       </div>
     </div>

@@ -9,13 +9,14 @@ const AllContacts = ({users}) => {
     <div className="all-contacts">
       <Header/>
       <div className="all-contacts__content">
-        {users.length > 0
-          ? <ContactList users={users}/>
-          : <div className="all-contacts__content-loader">
-            <CircularProgress/>
-          </div>
-}
-
+        {
+          users.length > 0 ? 
+            <ContactList users={users}/>
+            : 
+            <div className="all-contacts__content-loader">
+              <CircularProgress/>
+            </div>
+        }
       </div>
     </div>
   );

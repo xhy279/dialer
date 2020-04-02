@@ -1,14 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
-import Header from './header/Header';
-import ContactList from './contacts/ContactList';
 import Child from './contacts/Child';
 import AllContacts from './contacts/AllContacts';
-
-
 import { fetchUsers } from '../actions'; 
 
 class App extends React.Component {

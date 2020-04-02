@@ -7,8 +7,8 @@ class ContactList extends React.Component {
   renderList = () => {
     return this.props.users.map((user, index) => {
       return ( 
-        <Link to={`${user.id}`}>
-          <ContactCard key={index} user={user} />
+        <Link to={`${user.id}`} key={index}>
+          <ContactCard  user={user} />
         </Link>
       ) 
     });
