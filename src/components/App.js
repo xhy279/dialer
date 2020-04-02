@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import './App.css';
 import Header from './header/Header';
 import ContactList from './contacts/ContactList';
 import Child from './contacts/Child';

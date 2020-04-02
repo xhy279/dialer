@@ -11,7 +11,7 @@ import './Header.css';
 
 const Header = (props) => {
   return (
-    <div className="app-bar">
+    <div className="all-contacts-bar">
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -21,7 +21,7 @@ const Header = (props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className="app-bar__contacts">
+          <Typography variant="h6" className="all-contacts-bar__contacts">
             CONTACTS
           </Typography>
           <IconButton
@@ -33,7 +33,7 @@ const Header = (props) => {
             <AccountCircle/>
           </IconButton>
         </Toolbar>
-        <input type="text" className="app-bar__search" placeholder="Search Contact"/>
+        <input type="text" className="all-contacts-bar__search" placeholder="Search Contact"/>
       </AppBar>
     </div>
   );
