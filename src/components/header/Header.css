@@ -1,0 +1,16 @@
+.MuiTypography-root.app-bar__contacts.MuiTypography-h6 {
+  margin: 0 auto;
+}
+
+.app-bar .MuiAppBar-colorPrimary {
+  background-color: #7c4dff;
+}
+
+.app-bar__search {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 30px; 
+}

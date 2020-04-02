@@ -1,0 +1,29 @@
+.ui.cards {
+  margin: inherit;
+}
+
+.ui.cards>.card {
+  width: 100%;
+  margin: 0;
+}
+.ui.cards~.ui.cards {
+  margin: 0;
+}
+
+.ui.card>.content, .ui.cards>.card>.content {
+  padding: 2em 2em;
+}
+
+.contact-card__icons {
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+}
+
+.ui.label.contact-card__untouched {
+  border-radius: 14px;
+  background-color: purple;
+  color: white;
+  line-height: 5px;
+  margin-left: 10px;
+}
