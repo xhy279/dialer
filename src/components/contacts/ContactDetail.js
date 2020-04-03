@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../header/Header';
 import { selectUser } from '../../actions';
 import ProfileCard from '../profile/ProfileCard';
+import LogCall from '../logCall/LogCall';
 
 class ContactDetail extends React.Component {
 
@@ -11,7 +12,10 @@ class ContactDetail extends React.Component {
     nextProps.selectUser(nextProps.selectedUser.id);
   }
 
-  renderPage = (user) => {
+  renderPage = (user, callOpen) => {
+    if(callOpen) {
+      return ( <LogCall /> );
+    }
     return (
       <div>
         <Header config={{name: user.name}} />
@@ -22,13 +26,11 @@ class ContactDetail extends React.Component {
   
 
   render () {
-    const { selectedUser } = this.props;
+    const { selectedUser, callOpen } = this.props;
     return (
-      
       <div>
-        { selectedUser ? this.renderPage(selectedUser) : null}
+        { selectedUser ? this.renderPage(selectedUser, callOpen) : null}
       </div>
-     
     );
   }
 }
@@ -36,6 +38,7 @@ class ContactDetail extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     selectedUser: state.usersInfo.users.filter(user => user.id === Number(ownProps.id))[0],
+    callOpen: state.callOpen,
   }
 };
 
