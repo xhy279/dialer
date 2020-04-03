@@ -34,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
 const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  
-  function logCall() {
-    dispatch({ type: 'LOG_CALL' });
+
+  function openCall() {
+    dispatch({ type: 'OPEN_CALL' });
   }
 
   return (
@@ -55,7 +55,7 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
           </div>
         </div>
         <div className="profile-card__icons">
-          <PhoneCallbackIcon onClick={logCall} style={iconStyle} fontSize="large" />
+          <PhoneCallbackIcon onClick={openCall} style={iconStyle} fontSize="large" />
           <MailOutlineIcon style={iconStyle} fontSize="large"  />
           <ChatBubbleOutlineIcon style={iconStyle} fontSize="large" />
           <CalendarTodayIcon style={iconStyle} fontSize="large" />
@@ -65,7 +65,7 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
       <div className="profile-card__contact">
         <div className="profile-card__contact-bar">
           <div>Contact Detail</div>
-          <div onClick={logCall}>Edit</div>
+          <div onClick={openCall}>Edit</div>
         </div>
         <div className="ui cards profile-card__contact-content">
           <div className="card ">
