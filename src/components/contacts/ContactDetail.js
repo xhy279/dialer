@@ -1,25 +1,13 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 
 import Header from '../header/Header';
-
-
+import { selectUser } from '../../actions';
 
 class ContactDetail extends React.Component {
 
-  state = {
-    user: null,
-  };
- 
   componentWillReceiveProps(nextProps) {
-    if (this.props.users.length !== nextProps.users.length) {
-      console.log(nextProps.users, this.props.id)
-      this.setState({
-        user: nextProps.users.filter(user => user.id === Number(this.props.id))[0],
-      });
-    }
+    nextProps.selectUser(nextProps.selectedUser.id);
   }
 
   renderPage = (user) => {
@@ -32,12 +20,11 @@ class ContactDetail extends React.Component {
   
 
   render () {
-    const { user } = this.state;
-
+    const { selectedUser } = this.props;
     return (
       
       <div>
-        { user ? this.renderPage(user) : null}
+        { selectedUser ? this.renderPage(selectedUser) : null}
       </div>
      
     );
@@ -46,9 +33,13 @@ class ContactDetail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    users: state.users,
+    selectedUser: state.usersInfo.users.filter(user => user.id === Number(ownProps.id))[0],
   }
 };
 
-
-export default compose(connect(mapStateToProps, null), withRouter)(ContactDetail);
+const mapDispatchToProps = dispatch => {
+  return {
+    selectUser: (id) => dispatch(selectUser(id)),
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ContactDetail);

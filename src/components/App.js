@@ -11,7 +11,7 @@ class App extends React.Component {
     this.props.fetchUsers();
   }
   render() {
-    const { users } = this.props;
+    const { usersInfo: {users} } = this.props;
 
     return (
       <div className="app">
@@ -19,10 +19,8 @@ class App extends React.Component {
         <Switch>
           <Route path="/:id" render={
             (props) => <ContactDetail 
-            id={props.match.params.id} />} 
+            id={props.match.params.id} users={users} />} 
           />
-            {/* <ContactDetail />
-          </Route> */}
           <Route path="/" exact>
             <AllContacts users={users} />
           </Route>
@@ -35,7 +33,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users,
+    usersInfo: state.usersInfo,
+    // selectedUser: state.selectedUser,
   }
 };
 
