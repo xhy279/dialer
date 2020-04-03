@@ -73,5 +73,22 @@ svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge {
   margin: 15px 20px;
 }
 
+li.MuiListItem-root.MuiListItem-gutters:before {
+  content: "";
+  margin: 0px 19px;
+  position: absolute;
+  top: 13px;
+  bottom: -13px;
+  width: 2px;
+  background: purple;
+}
 
-
+li.MuiListItem-root.MuiListItem-gutters.last:before {
+  content: "";
+  margin: 0px 19px;
+  position: absolute;
+  top: 13px;
+  bottom: 13px;
+  width: 2px;
+  background: purple;
+}
