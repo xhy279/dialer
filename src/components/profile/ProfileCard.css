@@ -1,0 +1,77 @@
+.profile-card__icons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeLarge {
+  font-size: 3rem;
+}
+
+.profile-card__user {
+  display: flex;
+  height: 15vh;
+}
+
+.profile-card__user--left {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
+.profile-card__user--left svg:nth-of-type(1) {
+  font-size: 6rem;
+  color: dimgrey;
+}
+
+.profile-card__user--right {
+  width: 70%;
+  position: relative;
+  padding-left: 10px;
+}
+
+.profile-card__card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.profile-card__card span:nth-of-type(1) {
+  font-size: 25px;
+}
+
+.profile-card__card span:nth-of-type(2) {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+
+.ui.label.profile-card__untouched {
+  border-radius: 14px;
+  background-color: purple;
+  color: white;
+  line-height: 5px;
+  margin-left: 10px;
+}
+
+.profile-card__contact {
+  width: 100%;
+}
+
+.profile-card__contact-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.profile-card__info {
+  display: flex;
+}
+
+.profile-card__info div{
+  margin: 15px 20px;
+}
+
+
+

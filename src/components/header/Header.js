@@ -6,11 +6,22 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { useSelector } from 'react-redux';
 
 import './Header.css';
+import {
+  useHistory
+} from "react-router-dom";
 
 const Header = ({config: {name}}) => {
+  let history = useHistory();
+  const users = useSelector(state => state.usersInfo.users)
+  console.log(users);
+  function handleBackButton() {
+    history.push("/");
+  }
   return (
+    
     <div className="all-contacts-bar">
       <AppBar position="static">
         <Toolbar>
@@ -18,9 +29,10 @@ const Header = ({config: {name}}) => {
             edge="start"
             color="inherit"
             aria-label="menu"
+            onClick={handleBackButton}
           >
             { !name? <MenuIcon /> : 
-            <ArrowBackIosIcon /> }
+            <ArrowBackIosIcon   /> }
           </IconButton>
           <Typography variant="h6" className="all-contacts-bar__contacts">
             {!name ? 'CONTACTS' : name}

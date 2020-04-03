@@ -1,0 +1,11 @@
+.badge {
+  border-radius: 15px;
+  border-color: yellow;
+  border: 2px solid orange;
+  color: black;
+  margin-top: 7px;
+  width: max-content;
+  padding: 0px 8px;
+  font-size: smaller;
+  text-transform: capitalize;
+}

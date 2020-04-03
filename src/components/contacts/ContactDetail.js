@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from '../header/Header';
 import { selectUser } from '../../actions';
+import ProfileCard from '../profile/ProfileCard';
 
 class ContactDetail extends React.Component {
 
@@ -14,6 +15,7 @@ class ContactDetail extends React.Component {
     return (
       <div>
         <Header config={{name: user.name}} />
+        <ProfileCard user={user} />
       </div>
     )
   }
