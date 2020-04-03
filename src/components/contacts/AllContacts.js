@@ -7,7 +7,7 @@ import './AllContacts.css';
 const AllContacts = ({users}) => {
   return (
     <div className="all-contacts">
-      <Header/>
+      <Header config={{name:''}}/>
       <div className="all-contacts__content">
         {
           users.length > 0 ? 

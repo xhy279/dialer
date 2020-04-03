@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux';
-import Child from './contacts/Child';
+import ContactDetail from './contacts/ContactDetail';
 import AllContacts from './contacts/AllContacts';
 import { fetchUsers } from '../actions'; 
 
@@ -10,20 +10,25 @@ class App extends React.Component {
   componentDidMount() {
     this.props.fetchUsers();
   }
-
   render() {
     const { users } = this.props;
+
     return (
-      <Router>
+      <div className="app">
+        <Router>
         <Switch>
-          <Route path="/:id">
-            <Child />
-          </Route>
+          <Route path="/:id" render={
+            (props) => <ContactDetail 
+            id={props.match.params.id} />} 
+          />
+            {/* <ContactDetail />
+          </Route> */}
           <Route path="/" exact>
             <AllContacts users={users} />
           </Route>
         </Switch>
       </Router>
+      </div>
     )
   }
 }

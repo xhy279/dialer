@@ -1,8 +1,8 @@
-export default (state=[], action) => {
+export default (users=[], action) => {
   switch(action.type) {
     case 'FETCH_USERS':
-      return state.concat(action.payload);
+      return users.concat(action.payload);
     default:
-      return state;
+      return users;
   }
 }

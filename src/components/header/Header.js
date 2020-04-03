@@ -5,10 +5,11 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 import './Header.css';
 
-const Header = (props) => {
+const Header = ({config: {name}}) => {
   return (
     <div className="all-contacts-bar">
       <AppBar position="static">
@@ -18,21 +19,22 @@ const Header = (props) => {
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
+            { !name? <MenuIcon /> : 
+            <ArrowBackIosIcon /> }
           </IconButton>
           <Typography variant="h6" className="all-contacts-bar__contacts">
-            CONTACTS
+            {!name ? 'CONTACTS' : name}
           </Typography>
-          <IconButton
+          { !name? <IconButton
             aria-label="account of current user"
             aria-controls="primary-search-account-menu"
             aria-haspopup="true"
             color="inherit"
           >
             <AccountCircle/>
-          </IconButton>
+          </IconButton> : null }
         </Toolbar>
-        <input type="text" className="all-contacts-bar__search" placeholder="Search Contact"/>
+        { !name? <input type="text" className="all-contacts-bar__search" placeholder="Search Contact"/> : null}
       </AppBar>
     </div>
   );

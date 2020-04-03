@@ -7,3 +7,10 @@ export const fetchUsers = () => async (dispatch) => {
     payload: response.data,
   });
 }
+
+export const selectUser = (id) => {
+  return {
+    type: 'SELECT_USER',
+    payload: id,
+  }
+}
