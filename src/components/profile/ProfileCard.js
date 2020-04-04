@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProfileCard = ({user: {email, phone, name, untouched, status}, user}) => {
+const ProfileCard = ({user: {email, phone, name, untouched, status, log}}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -85,14 +85,18 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, user}) => {
         <div className="ui cards profile-card__contact-content">
           <div className="card ">
             <List className={classes.root}>
-            {user.log ? <ListItem>
+            {log ? <ListItem  className="first">
               <ListItemAvatar>
                 <Avatar >
                   <CallIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Call" secondary="12/12/2019 11:50:30 am" />
-              <ListItemText secondary="12/12/2019 11:50:30 am" />
+              <ListItemText primary="Call" secondary={
+                <React.Fragment>
+                  <span>12/12/2019 10:59:30 am</span><br/>
+                  <span>{log}</span> 
+                </React.Fragment>
+              } />
             </ListItem> : null}
             <ListItem>
               <ListItemAvatar>

@@ -11,7 +11,7 @@ class App extends React.Component {
     this.props.fetchUsers();
   }
   render() {
-    const { usersInfo: {users} } = this.props;
+    const { users } = this.props;
 
     return (
       <div className="app">
@@ -33,7 +33,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    usersInfo: state.usersInfo,
+    users: state.users,
   }
 };
 

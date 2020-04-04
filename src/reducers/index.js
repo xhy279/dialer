@@ -3,6 +3,6 @@ import usersReducer from './usersReducer';
 import callReducer from './callReducer';
 
 export default combineReducers({
-  usersInfo: usersReducer,
+  users: usersReducer,
   callOpen: callReducer,
 });

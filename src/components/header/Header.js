@@ -14,7 +14,7 @@ import './Header.css';
 const Header = ({config: {name}}) => {
   let history = useHistory();
   const dispatch = useDispatch();
-  const callOpen = useSelector(state => state.callOpen)
+  const callOpen = useSelector(state => state.callOpen);
   function handleBackButton() {
     callOpen ? dispatch({ type: 'CLOSE_CALL' }) : history.push("/");
   }

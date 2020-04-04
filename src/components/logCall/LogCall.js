@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { useParams } from "react-router-dom";
 import CallIcon from '@material-ui/icons/Call';
 import './LogCall.css';
 
 const LogCall = () => {
   const dispatch = useDispatch();
-  // const log = useSelector( state => state.usersInfo.selectedUser.log);
-  const selectedUser = useSelector( state => state.usersInfo.selectedUser);
+  const { id } = useParams();
+  const selectedUser = useSelector(state => state.users)
+    .filter(user => user.id === Number(id))[0];
   useEffect(() => {
     return () => {
       dispatch({ type: 'CLOSE_CALL' });
@@ -17,7 +18,7 @@ const LogCall = () => {
   function handleChange(e) {
     dispatch({ 
       type: 'UPDATE_USER', 
-      payload:  e.target.value
+      payload:  {id: id, value: e.target.value}
     });
   }
 
@@ -44,7 +45,7 @@ const LogCall = () => {
                   onChange={handleChange}
                 />
                 <div className="log-call__log">
-                  <button className={`ui button ${false? 'log-call__log--changed' : ''}`}
+                  <button className={`ui button ${selectedUser.log? 'log-call__log--changed' : ''}`}
                     onClick={handleClick}
                   >
                     Log

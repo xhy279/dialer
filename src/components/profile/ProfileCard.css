@@ -84,13 +84,12 @@ li.MuiListItem-root.MuiListItem-gutters:before {
 }
 
 li.MuiListItem-root.MuiListItem-gutters.last:before {
-  content: "";
-  margin: 0px 19px;
-  position: absolute;
   top: 13px;
   bottom: 13px;
-  width: 2px;
-  background: purple;
+}
+
+li.MuiListItem-root.MuiListItem-gutters.first:before {
+  top: 22px;
 }
 .profile-card__contact--text {
   color: rgba(0, 0, 0, 0.54);

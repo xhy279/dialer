@@ -1,17 +1,14 @@
-export default (state={
-  users: [],
-}, action) => {
+export default (state=[], action) => {
   switch(action.type) {
     case 'FETCH_USERS':
-      return Object.assign({}, state, {users: action.payload});
-    // case 'SELECT_USER':
-    //   return Object.assign({}, state, {
-    //     selectedUser: state.users.filter(user => user.id === action.payload)[0],
-    //   });
-    case 'UPDATE_USER': 
-      
-      return Object.assign({}, state, {
-        selectedUser: { ...state.selectedUser, log: action.payload }
+      return Object.assign([], state, action.payload);
+    case 'UPDATE_USER':
+      return state.map(user => {
+        if(user.id !== Number(action.payload.id)) {
+          return user;
+        } else {
+          return Object.assign({}, user, {log: action.payload.value});
+        }
       });
     default:
       return state;
