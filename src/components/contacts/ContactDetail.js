@@ -13,13 +13,10 @@ class ContactDetail extends React.Component {
   }
 
   renderPage = (user, callOpen) => {
-    if(callOpen) {
-      return ( <LogCall /> );
-    }
     return (
       <div>
         <Header config={{name: user.name}} />
-        <ProfileCard user={user} />
+        { !callOpen ? <ProfileCard user={user} /> : <LogCall /> }
       </div>
     )
   }

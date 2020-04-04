@@ -6,19 +6,17 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {useHistory} from "react-router-dom";
 
 import './Header.css';
-import {
-  useHistory
-} from "react-router-dom";
 
 const Header = ({config: {name}}) => {
   let history = useHistory();
-  const users = useSelector(state => state.usersInfo.users)
-  console.log(users);
+  const dispatch = useDispatch();
+  const callOpen = useSelector(state => state.callOpen)
   function handleBackButton() {
-    history.push("/");
+    callOpen ? dispatch({ type: 'CLOSE_CALL' }) : history.push("/");
   }
   return (
     
