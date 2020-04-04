@@ -8,9 +8,13 @@ import LogCall from '../logCall/LogCall';
 
 class ContactDetail extends React.Component {
 
-  componentWillReceiveProps(nextProps) {
-    nextProps.selectUser(nextProps.selectedUser.id);
-  }
+  // componentDidMount() {
+  //   debugger;
+  //   const { selectedUser } = this.props.usersInfo;
+  //   if(selectedUser) {
+  //     selectUser(this.props.id);
+  //   }
+  // }
 
   renderPage = (user, callOpen) => {
     return (
@@ -34,7 +38,8 @@ class ContactDetail extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    selectedUser: state.usersInfo.users.filter(user => user.id === Number(ownProps.id))[0],
+    selectedUser:  state.usersInfo.users.filter(user => user.id === Number(ownProps.id))[0],
+    usersInfo: state.usersInfo,
     callOpen: state.callOpen,
   }
 };

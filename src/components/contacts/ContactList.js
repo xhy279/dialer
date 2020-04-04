@@ -6,13 +6,13 @@ import { selectUser } from '../../actions';
 
 class ContactList extends React.Component {
 
-  selectUser = (id) => {
-    this.props.selectUser(id);
-  }
+  // selectUser = (id) => {
+  //   this.props.selectUser(id);
+  // }
   renderList = () => {
     return this.props.users.map((user, index) => {
       return ( 
-        <Link to={`${user.id}`} key={index} onClick={this.selectUser.bind(this, user.id)}>
+        <Link to={`${user.id}`} key={index} >
           <ContactCard  user={user} />
         </Link>
       ) 
@@ -31,7 +31,7 @@ class ContactList extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    selectUser: (id) => dispatch(selectUser(id)),
+    // selectUser: (id) => dispatch(selectUser(id)),
   }
 }
 

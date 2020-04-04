@@ -34,7 +34,6 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     usersInfo: state.usersInfo,
-    // selectedUser: state.selectedUser,
   }
 };
 

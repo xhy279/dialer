@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
+const ProfileCard = ({user: {email, phone, name, untouched, status}, user}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -39,7 +39,6 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
 
   return (
     <div className="ui cards profile-card">
-
       <div className="card">
         <div className="profile-card__user">
           <div className="profile-card__user--left">
@@ -86,14 +85,15 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
         <div className="ui cards profile-card__contact-content">
           <div className="card ">
             <List className={classes.root}>
-            {/* <ListItem>
+            {user.log ? <ListItem>
               <ListItemAvatar>
                 <Avatar >
                   <CallIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </ListItem> */}
+              <ListItemText primary="Call" secondary="12/12/2019 11:50:30 am" />
+              <ListItemText secondary="12/12/2019 11:50:30 am" />
+            </ListItem> : null}
             <ListItem>
               <ListItemAvatar>
                 <Avatar >

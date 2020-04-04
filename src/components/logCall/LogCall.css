@@ -1,0 +1,48 @@
+.log-call {
+
+}
+
+.card.log-call__top-card {
+  padding: 10px 0px 20px 0px !important;
+  color: rgb(124, 77, 255);
+  font-size: 2rem!important;
+  display: inline-flex !important;
+  text-align: center;
+}
+
+.card.log-call__top-card svg {
+  font-size: 2.5rem;
+  margin-right: 10px;
+  transform: translateY(25%);
+}
+
+.ui.form textarea {
+  resize: none;
+  border: none;
+}
+
+.ui.form textarea::placeholder { 
+  font-style: italic;
+}
+
+.ui.form textarea:not([rows]) {
+  height: 26em;
+  max-height: none;
+}
+
+.log-call__log {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+.log-call__log button {
+  line-height: 0.6em !important;
+  border-radius: 20px !important;
+  color: white !important;
+  width: 7rem;
+}
+
+.log-call__log--changed {
+  background-color: limegreen !important;
+}
