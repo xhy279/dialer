@@ -88,9 +88,19 @@ li.MuiListItem-root.MuiListItem-gutters.last:before {
   bottom: 13px;
 }
 
-li.MuiListItem-root.MuiListItem-gutters.first:before {
+li.MuiListItem-root.MuiListItem-gutters.second:before {
   top: 22px;
 }
+li.MuiListItem-root.MuiListItem-gutters.first:before {
+  top: 22px;
+  bottom: -22px;
+}
+
+li.MuiListItem-root.MuiListItem-gutters.first svg {
+  font-size: 2em;
+  color: rgb(92, 210, 92);
+}
+
 .profile-card__contact--text {
   color: rgba(0, 0, 0, 0.54);
 }

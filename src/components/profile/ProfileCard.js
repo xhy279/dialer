@@ -15,6 +15,7 @@ import Avatar from '@material-ui/core/Avatar';
 import CallIcon from '@material-ui/icons/Call';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 import Badge from './Badge';
 import './ProfileCard.css';
@@ -45,11 +46,20 @@ const ProfileCard = ({user: {email, phone, name, untouched, status, log}}) => {
     } else if (status === 'in progress') {
       return {
         text: status,
-        changeHandler: () => dispatch('OPEN_DIALOG'),
+        changeHandler: () => dispatch({type: 'TOGGLE_MODAL'}),
+        style: {
+          border: 'none',
+          background: 'orange'
+        }
       }
     } else if (status === 'hired') {
       return {
         text: status,
+        style: {
+          border: 'none',
+          background: 'rgb(92, 210, 92)',
+          color: 'white',
+        }
       }
     }
   }
@@ -101,19 +111,32 @@ const ProfileCard = ({user: {email, phone, name, untouched, status, log}}) => {
         <div className="ui cards profile-card__contact-content">
           <div className="card ">
             <List className={classes.root}>
-            {log ? <ListItem  className="first">
-              <ListItemAvatar>
-                <Avatar >
-                  <CallIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Call" secondary={
-                <React.Fragment>
-                  <span>12/12/2019 10:59:30 am</span><br/>
-                  <span>{log}</span> 
-                </React.Fragment>
-              } />
-            </ListItem> : null}
+              { status==='hired' ? <ListItem  className="first">
+                  <ListItemAvatar>
+                    <Avatar >
+                      <BookmarkBorderIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Hired" secondary={
+                    <React.Fragment>
+                      <span>12/12/2019 12:15:31 am</span><br/>
+                      <span style={{fontStyle: 'italic'}}>{"A quick win!"}</span> 
+                    </React.Fragment>
+                  } />
+                </ListItem> : null}
+              { log ? <ListItem  className="second">
+                <ListItemAvatar>
+                  <Avatar >
+                    <CallIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Call" secondary={
+                  <React.Fragment>
+                    <span>12/12/2019 10:59:30 am</span><br/>
+                    <span style={{fontStyle: 'italic'}}>{log}</span> 
+                  </React.Fragment>
+                } />
+              </ListItem> : null}
             <ListItem>
               <ListItemAvatar>
                 <Avatar >

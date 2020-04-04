@@ -20,18 +20,27 @@ const LogCall = () => {
       type: 'UPDATE_USER', 
       payload:  {
         id: id, 
+        field: 'log',
         value: e.target.value,
-        field: 'log'
       }
     });
     dispatch({ 
       type: 'UPDATE_USER', 
       payload:  {
         id: id, 
+        field: 'status',
         value: 'in progress',
-        field: 'status'
       }
     });
+    dispatch({ 
+      type: 'UPDATE_USER', 
+      payload:  {
+        id: id, 
+        field: 'untouched',
+        value: false,
+      }
+    });
+
   }
 
   function handleClick() {

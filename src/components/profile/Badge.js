@@ -2,9 +2,9 @@ import React from 'react';
 import './badge.css';
 
 const Badge = (props) => {
-  const {text, changeHandler} = props.config;
+  const {text, changeHandler, style} = props.config;
   return (
-    <div className={`badge`} onClick={changeHandler}>
+    <div className="badge" style={style} onClick={changeHandler}>
       {text}
     </div>
   );
