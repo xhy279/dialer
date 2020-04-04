@@ -37,6 +37,22 @@ const ProfileCard = ({user: {email, phone, name, untouched, status, log}}) => {
     dispatch({ type: 'OPEN_CALL' });
   }
 
+  function badgeConfig() {
+    if(status === 'open') {
+      return {
+        text: status,
+      }
+    } else if (status === 'in progress') {
+      return {
+        text: status,
+        changeHandler: () => dispatch('OPEN_DIALOG'),
+      }
+    } else if (status === 'hired') {
+      return {
+        text: status,
+      }
+    }
+  }
   return (
     <div className="ui cards profile-card">
       <div className="card">
@@ -47,7 +63,7 @@ const ProfileCard = ({user: {email, phone, name, untouched, status, log}}) => {
           <div className="profile-card__user--right">
           <div className="profile-card__card"> 
             <span>{ name }</span> {untouched ? <span className="ui label profile-card__untouched">New</span> : null}
-            <Badge  text={ status } />
+            <Badge  config={badgeConfig()} />
           </div>
           </div>
         </div>

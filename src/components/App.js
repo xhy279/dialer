@@ -16,16 +16,16 @@ class App extends React.Component {
     return (
       <div className="app">
         <Router>
-        <Switch>
-          <Route path="/:id" render={
-            (props) => <ContactDetail 
-            id={props.match.params.id} users={users} />} 
-          />
-          <Route path="/" exact>
-            <AllContacts users={users} />
-          </Route>
-        </Switch>
-      </Router>
+          <Switch>
+            <Route path="/:id" render={
+              (props) => <ContactDetail 
+              id={props.match.params.id} users={users} />} 
+            />
+            <Route path="/" exact>
+              <AllContacts users={users} />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     )
   }

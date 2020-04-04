@@ -18,7 +18,19 @@ const LogCall = () => {
   function handleChange(e) {
     dispatch({ 
       type: 'UPDATE_USER', 
-      payload:  {id: id, value: e.target.value}
+      payload:  {
+        id: id, 
+        value: e.target.value,
+        field: 'log'
+      }
+    });
+    dispatch({ 
+      type: 'UPDATE_USER', 
+      payload:  {
+        id: id, 
+        value: 'in progress',
+        field: 'status'
+      }
     });
   }
 
@@ -42,6 +54,7 @@ const LogCall = () => {
               <div className="field">
                 <textarea className="log-call__textarea"
                   placeholder="what have you discussed?"
+                  value={selectedUser.log}
                   onChange={handleChange}
                 />
                 <div className="log-call__log">

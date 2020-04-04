@@ -7,7 +7,9 @@ export default (state=[], action) => {
         if(user.id !== Number(action.payload.id)) {
           return user;
         } else {
-          return Object.assign({}, user, {log: action.payload.value});
+          return Object.assign({}, user, 
+            {[action.payload.field]: action.payload.value}
+          );
         }
       });
     default:
