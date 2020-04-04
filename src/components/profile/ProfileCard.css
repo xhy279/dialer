@@ -92,3 +92,10 @@ li.MuiListItem-root.MuiListItem-gutters.last:before {
   width: 2px;
   background: purple;
 }
+.profile-card__contact--text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.profile-card__contact--cursor {
+  cursor: pointer;
+}

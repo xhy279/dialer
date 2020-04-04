@@ -7,15 +7,13 @@ import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import ControlPointIcon from '@material-ui/icons/ControlPoint';
 import DescriptionIcon from '@material-ui/icons/Description';
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import CallIcon from '@material-ui/icons/Call';
-import { useDispatch } from 'react-redux'
-
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Badge from './Badge';
@@ -55,7 +53,7 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
           </div>
         </div>
         <div className="profile-card__icons">
-          <PhoneCallbackIcon onClick={openCall} style={iconStyle} fontSize="large" />
+          <PhoneCallbackIcon onClick={openCall} style={{...iconStyle, cursor: 'pointer'}} fontSize="large" />
           <MailOutlineIcon style={iconStyle} fontSize="large"  />
           <ChatBubbleOutlineIcon style={iconStyle} fontSize="large" />
           <CalendarTodayIcon style={iconStyle} fontSize="large" />
@@ -65,15 +63,15 @@ const ProfileCard = ({user: {email, phone, name, untouched, status}, }) => {
       <div className="profile-card__contact">
         <div className="profile-card__contact-bar">
           <div>Contact Detail</div>
-          <div onClick={openCall}>Edit</div>
+          <div className="profile-card__contact--text profile-card__contact--cursor" onClick={openCall}>Edit</div>
         </div>
         <div className="ui cards profile-card__contact-content">
           <div className="card ">
-            <div className="profile-card__info">
+            <div className="profile-card__info profile-card__contact--text">
               <div>Email</div>
               <div>{email}</div>
             </div>
-            <div className="profile-card__info">
+            <div className="profile-card__info profile-card__contact--text">
               <div>Phone</div>
               <div>{phone}</div>
             </div>
