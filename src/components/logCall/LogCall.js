@@ -54,7 +54,7 @@ const LogCall = () => {
       </div>
       <div className="profile-card__contact">
         <div className="profile-card__contact-bar">
-          <div>Contact Detail</div>
+          <div>Call Detail</div>
           <div className="profile-card__contact--text">12/12/2019 10:50:30 am</div>
         </div>
         <div className="ui cards profile-card__contact-content">
