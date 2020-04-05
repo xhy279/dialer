@@ -10,7 +10,7 @@ const AllContacts = ({users}) => {
       <Header config={{name:''}}/>
       <div className="all-contacts__content">
         {
-          users.length  ? 
+          (users && users.length)  ? 
             <ContactList users={users}/>
             : 
             <div className="all-contacts__content-loader">
